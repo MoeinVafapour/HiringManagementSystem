@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32210.238
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HiringManagementTestPRoject", "HiringManagementTestPRoject\HiringManagementTestPRoject.csproj", "{23A511A8-F781-4301-99DD-B8844A2CA2FF}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HiringManagementSystem", "HiringManagementSystem\HiringManagementSystem.csproj", "{E377746D-3D0B-46CD-8550-F905149E92BB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{23A511A8-F781-4301-99DD-B8844A2CA2FF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{23A511A8-F781-4301-99DD-B8844A2CA2FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{23A511A8-F781-4301-99DD-B8844A2CA2FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{23A511A8-F781-4301-99DD-B8844A2CA2FF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E377746D-3D0B-46CD-8550-F905149E92BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E377746D-3D0B-46CD-8550-F905149E92BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E377746D-3D0B-46CD-8550-F905149E92BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E377746D-3D0B-46CD-8550-F905149E92BB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {51B3AD8E-2250-4D36-B97D-381D857A1D47}
+	EndGlobalSection
+EndGlobal
