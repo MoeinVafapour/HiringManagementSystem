@@ -1,9 +1,9 @@
-﻿using HiringManagementSystem.Models.DomainModels.Aggregates;
-using HiringManagementSystem.Models.Repositories.Abstracts;
+﻿using HiringManagementSystem.Domains.DomainModels.Aggregates;
+using HiringManagementSystem.Domains.Repositories.Abstracts;
 using System.Threading.Tasks;
 using TanvirArjel.Extensions.Microsoft.DependencyInjection;
 
-namespace HiringManagementSystem.Models.Services.Abstracts
+namespace HiringManagementSystem.Domains.Services.Abstracts
 {
     [ScopedService]
     public interface ITagRepository : IRepository<TagAggregate,int>

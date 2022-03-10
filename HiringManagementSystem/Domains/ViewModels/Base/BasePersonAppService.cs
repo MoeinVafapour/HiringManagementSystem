@@ -1,8 +1,8 @@
 ﻿using AutoMapper;
-using HiringManagementSystem.Models.Services.Abstracts;
-using HiringManagementSystem.Models.ViewModels.Abstarct;
+using HiringManagementSystem.Domains.Services.Abstracts;
+using HiringManagementSystem.Domains.ViewModels.Abstarct;
 
-namespace HiringManagementSystem.Models.ViewModels.Base
+namespace HiringManagementSystem.Domains.ViewModels.Base
 {
     public class BasePersonAppService : IPersonAppService
     {

@@ -1,9 +1,9 @@
-﻿using HiringManagementSystem.Models.Repositories.Abstracts;
+﻿using HiringManagementSystem.Domains.Repositories.Abstracts;
 using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace HiringManagementSystem.Models.Repositories.Base
+namespace HiringManagementSystem.Domains.Repositories.Base
 {
     public class BaseRepository<K_DbContext, T_Entity, U_PrimaryKey> : IRepository<T_Entity, U_PrimaryKey>
         where T_Entity : class where K_DbContext : HiringManagementSystemDbContext

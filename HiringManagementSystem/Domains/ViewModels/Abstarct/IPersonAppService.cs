@@ -1,4 +1,4 @@
-﻿namespace HiringManagementSystem.Models.ViewModels.Abstarct
+﻿namespace HiringManagementSystem.Domains.ViewModels.Abstarct
 {
     public interface IPersonAppService
     {

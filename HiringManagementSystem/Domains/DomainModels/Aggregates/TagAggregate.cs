@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace HiringManagementSystem.Models.DomainModels.Aggregates
+namespace HiringManagementSystem.Domains.DomainModels.Aggregates
 {
     public class TagAggregate
     {

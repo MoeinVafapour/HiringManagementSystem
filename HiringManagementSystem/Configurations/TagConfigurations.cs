@@ -1,4 +1,4 @@
-﻿using HiringManagementSystem.Models.DomainModels.Aggregates;
+﻿using HiringManagementSystem.Domains.DomainModels.Aggregates;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 

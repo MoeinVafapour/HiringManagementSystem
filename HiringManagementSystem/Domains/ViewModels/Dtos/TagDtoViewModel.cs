@@ -1,4 +1,4 @@
-﻿namespace HiringManagementSystem.Models.ViewModels.Dtos
+﻿namespace HiringManagementSystem.Domains.ViewModels.Dtos
 {
     public class TagDtoViewModel
     {

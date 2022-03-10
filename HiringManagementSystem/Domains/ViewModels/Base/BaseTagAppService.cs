@@ -1,6 +1,6 @@
-﻿using HiringManagementSystem.Models.ViewModels.Abstarct;
+﻿using HiringManagementSystem.Domains.ViewModels.Abstarct;
 
-namespace HiringManagementSystem.Models.ViewModels.Base
+namespace HiringManagementSystem.Domains.ViewModels.Base
 {
     public class BaseTagAppService : ITagAppService
     {
