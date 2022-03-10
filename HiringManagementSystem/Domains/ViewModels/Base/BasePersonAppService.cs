@@ -47,5 +47,23 @@ namespace HiringManagementSystem.Domains.ViewModels.Base
             var person = Mapper.Map<PersonDtoViewModel, PersonAggregate>(personDto);
             await PersonRepository.UpdateAsync(person);
         }
+
+        public async Task<PersonDtoViewModel> FindByFamilyAsync(string family)
+        {
+            var person = PersonRepository.FindByFamilyAsync(family);
+            return Mapper.Map<PersonAggregate,PersonDtoViewModel>(await person);
+        }
+
+        public async Task<PersonDtoViewModel> FindByNationalIdAsync(int nationalId)
+        {
+            var person = PersonRepository.FindByNationalId(nationalId);
+            return Mapper.Map<PersonAggregate, PersonDtoViewModel>(await person);
+        }
+
+        public async Task<PersonDtoViewModel> FindByTagNameAsync(string tagName)
+        {
+            var person = PersonRepository.FindByTagName(tagName);
+            return Mapper.Map<PersonAggregate,PersonDtoViewModel>(await person);
+        }
     }
 }

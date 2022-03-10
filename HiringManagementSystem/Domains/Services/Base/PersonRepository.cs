@@ -17,7 +17,8 @@ namespace HiringManagementSystem.Domains.Services.Base
 
         public async Task<PersonAggregate> FindByFamilyAsync(string family)
         {
-            return await DbSet.FirstOrDefaultAsync(p => p.Family == family);
+            var person = await DbSet.FirstOrDefaultAsync(p => p.Family == family);
+            return person;
         }
 
         public Task<PersonAggregate> FindByNationalId(int nationalId)
@@ -25,9 +26,9 @@ namespace HiringManagementSystem.Domains.Services.Base
             return DbSet.FirstOrDefaultAsync(p => p.NationalId == nationalId);
         }
 
-        public PersonAggregate FindByTagName(string name)
+        public async Task<PersonAggregate> FindByTagName(string name)
         {
-            var person = DbContext.Person.Where(p => p.Tags.Select(t => t.TagName == name).FirstOrDefault()).FirstOrDefault();
+            var person = DbSet.Where(p => p.Tags.Select(t => t.TagName == name).FirstOrDefault()).FirstOrDefault();
             return person;
         }
 

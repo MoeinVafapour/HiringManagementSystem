@@ -11,5 +11,9 @@ namespace HiringManagementSystem.Domains.ViewModels.Abstarct
         Task InsertAsync(PersonDtoViewModel person);
         Task UpdateAsync(PersonDtoViewModel person);
         Task DeleteAsync(int id);
+        Task<PersonDtoViewModel> FindByFamilyAsync(string family);
+        Task<PersonDtoViewModel> FindByNationalIdAsync(int nationalId);
+        Task<PersonDtoViewModel> FindByTagNameAsync(string tagName);
+
     }
 }

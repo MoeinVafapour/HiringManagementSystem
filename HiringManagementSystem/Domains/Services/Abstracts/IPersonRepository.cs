@@ -10,6 +10,6 @@ namespace HiringManagementSystem.Domains.Services.Abstracts
     {
         Task<PersonAggregate> FindByFamilyAsync(string family);
         Task<PersonAggregate> FindByNationalId(int nationalId);
-        PersonAggregate FindByTagName(string name);
+        Task<PersonAggregate> FindByTagName(string name);
     }
 }
