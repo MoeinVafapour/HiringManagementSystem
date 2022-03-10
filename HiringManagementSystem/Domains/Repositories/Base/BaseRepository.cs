@@ -45,7 +45,7 @@ namespace HiringManagementSystem.Domains.Repositories.Base
         #endregion
 
         #region [- FindById(U_PrimaryKey id) -]
-        public virtual async Task<T_Entity> FindById(U_PrimaryKey id)
+        public virtual async Task<T_Entity> FindByIdAsync(U_PrimaryKey id)
         {
             var entity = DbSet.FindAsync(id);
             return await entity;

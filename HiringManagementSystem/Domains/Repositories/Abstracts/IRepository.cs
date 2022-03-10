@@ -10,7 +10,7 @@ namespace HiringManagementSystem.Domains.Repositories.Abstracts
         Task DeleteAsync(T_Entity entity);
         Task DeleteAsync(U_PrimaryKey id);
         Task<List<T_Entity>> GetAllAsync();
-        Task<T_Entity> FindById(U_PrimaryKey id);
+        Task<T_Entity> FindByIdAsync(U_PrimaryKey id);
         Task SaveChanges();
     }
 }

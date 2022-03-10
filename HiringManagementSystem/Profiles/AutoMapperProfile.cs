@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
-using HiringManagementSystem.Models.DomainModels.Aggregates;
-using HiringManagementSystem.Models.ViewModels.Dtos;
+using HiringManagementSystem.Domains.DomainModels.Aggregates;
+using HiringManagementSystem.Domains.ViewModels.Dtos;
 
 namespace HiringManagementSystem.Profiles
 {
