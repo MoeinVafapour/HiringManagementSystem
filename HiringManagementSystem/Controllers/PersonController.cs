@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace HiringManagementSystem.Controllers
 {
-    [Route("api/[controller]")]
+    
     [ApiController]
     public class PersonController : ControllerBase
     {
@@ -16,45 +16,59 @@ namespace HiringManagementSystem.Controllers
             PersonAppService = personAppService;
         }
 
-        public IPersonAppService PersonAppService { get; }
+        public IPersonAppService PersonAppService { get; set; }
 
-
+        [Route("wapi/v1/1")]
         public async Task<List<PersonDtoViewModel>> GetAllAsync()
         {
             var persons = await PersonAppService.GetAllAsync();
             return persons;
         }
-
+        [Route("wapi/v1/2")]
         public async Task<PersonDtoViewModel> FindByIdAsync(int id)
         {
             var person = await PersonAppService.FindByIdAsync(id);
             return person;
         }
 
+        [Route("wapi/v1/3")]
         public async Task InsertAsync(PersonDtoViewModel person)
         {
             await PersonAppService.InsertAsync(person);
         }
 
+        [Route("wapi/v1/4")]
         public async Task UpdateAsync(PersonDtoViewModel person)
         {
             await PersonAppService.UpdateAsync(person);
         }
 
+        [Route("wapi/v1/5")]
         public async Task DeleteAsync(int id)
         {
             await PersonAppService.DeleteAsync(id);
         }
 
-        Task<PersonDtoViewModel> FindByFamilyAsync(string family)
+        [Route("wapi/v1/6")]
+        public async Task<PersonDtoViewModel> FindByFamilyAsync(string family)
         {
-            PersonAppService.find
+            var person = await PersonAppService.FindByFamilyAsync(family);
+            return person;
         }
-        Task<PersonDtoViewModel> FindByNationalId(int nationalId)
-        {
 
+        [Route("wapi/v1/7")]
+        public Task<PersonDtoViewModel> FindByNationalId(int nationalId)
+        {
+            var person = PersonAppService.FindByNationalIdAsync(nationalId);
+            return person;
         }
-        PersonAggregate FindByTagName(string name);
+
+        [Route("wapi/v1/8")]
+        public Task<PersonDtoViewModel> FindByTagName(string tagName)
+        {
+            var person = PersonAppService.FindByTagNameAsync(tagName);
+            return person;
+        }
 
     }
 }

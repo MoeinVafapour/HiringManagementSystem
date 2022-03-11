@@ -1,3 +1,5 @@
+using AutoMapper;
+using HiringManagementSystem.Profiles;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -12,6 +14,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using TanvirArjel.Extensions.Microsoft.DependencyInjection;
 
 namespace HiringManagementSystem
 {
@@ -27,6 +30,14 @@ namespace HiringManagementSystem
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddAutoMapper(typeof(Startup));
+
+            var mappingConfig = new MapperConfiguration(mc =>
+            {
+                mc.AddProfile(new AutoMapperProfile());
+            }).CreateMapper();
+
+            services.AddSingleton(mappingConfig);
 
             services.AddControllers();
             services.AddSwaggerGen(c =>
@@ -39,6 +50,33 @@ namespace HiringManagementSystem
                 option.UseSqlServer(Configuration.GetConnectionString("Default"));
 
             });
+
+
+            services.AddSwaggerDocument(config =>
+            {
+                config.PostProcess = document =>
+                {
+                    document.Info.Version = "v1";
+                    document.Info.Title = "ToDo API";
+                    document.Info.Description = "A Hiring Management System";
+                    document.Info.TermsOfService = "None";
+                    document.Info.Contact = new NSwag.OpenApiContact
+                    {
+                        Name = "Shayne Boyer",
+                        Email = string.Empty,
+                        Url = "https://twitter.com/spboyer"
+                    };
+                    document.Info.License = new NSwag.OpenApiLicense
+                    {
+                        Name = "Use under LICX",
+                        Url = "https://example.com/license"
+                    };
+                };
+            });
+
+            services.AddServicesOfAllTypes();
+
+            services.AddServicesWithAttributeOfType<ScopedServiceAttribute>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -47,7 +85,7 @@ namespace HiringManagementSystem
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
-                app.UseSwagger();
+                app.UseSwaggerUi3();
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "HiringManagementSystem v1"));
             }
 
