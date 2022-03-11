@@ -18,11 +18,6 @@ namespace HiringManagementSystem.Domains.Services.Base
         {
             return DbSet.FirstOrDefaultAsync(t => t.TagName == tagName);
         }
-
-        public Task<TagAggregate> FindPersonByTag(string tagName)
-        {
-            var model = DbSet.Include(t => t.Person).FirstOrDefaultAsync(t => t.TagName == tagName);
-            return model;
-        }
+    
     }
 }

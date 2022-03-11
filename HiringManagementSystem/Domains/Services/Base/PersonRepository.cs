@@ -28,7 +28,7 @@ namespace HiringManagementSystem.Domains.Services.Base
 
         public async Task<PersonAggregate> FindByTagName(string name)
         {
-            var person = DbSet.Where(p => p.Tags.Select(t => t.TagName == name).FirstOrDefault()).FirstOrDefault();
+            var person =  DbSet.Where(p => p.Tags.Select( t => t.TagName == name).FirstOrDefault()).FirstOrDefault();
             return person;
         }
 

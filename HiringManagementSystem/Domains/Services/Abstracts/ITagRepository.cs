@@ -9,6 +9,5 @@ namespace HiringManagementSystem.Domains.Services.Abstracts
     public interface ITagRepository : IRepository<TagAggregate,int>
     {
         Task<TagAggregate> FindByTagNameAsync(string tagName);
-        Task<TagAggregate> FindPersonByTag(string tagName);
     }
 }
