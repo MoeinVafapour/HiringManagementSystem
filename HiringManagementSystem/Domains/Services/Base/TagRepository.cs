@@ -2,6 +2,8 @@
 using HiringManagementSystem.Domains.Repositories.Base;
 using HiringManagementSystem.Domains.Services.Abstracts;
 using Microsoft.EntityFrameworkCore;
+using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace HiringManagementSystem.Domains.Services.Base
@@ -14,9 +16,11 @@ namespace HiringManagementSystem.Domains.Services.Base
 
         }
 
-        public Task<TagAggregate> FindByTagNameAsync(string tagName)
+        public async Task<List<TagAggregate>> FindByTagNameAsync(string tagName)
         {
-            return DbSet.FirstOrDefaultAsync(t => t.TagName == tagName);
+            //return  DbSet.Select(t => t.TagName == tagName).ToListAsync();
+            var tags = await DbSet.AsNoTracking().Where(t => t.TagName == tagName).ToListAsync();
+            return tags;
         }
     
     }

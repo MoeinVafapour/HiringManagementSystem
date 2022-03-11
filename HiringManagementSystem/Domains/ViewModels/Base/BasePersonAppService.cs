@@ -65,5 +65,10 @@ namespace HiringManagementSystem.Domains.ViewModels.Base
             var person = PersonRepository.FindByTagName(tagName);
             return Mapper.Map<PersonAggregate,PersonDtoViewModel>(await person);
         }
+        
+        //public async Task<PersonDtoViewModel> CreateTagAsync(TagDtoViewModel tag)
+        //{
+            
+        //}
     }
 }

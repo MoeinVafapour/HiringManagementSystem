@@ -10,14 +10,14 @@ namespace HiringManagementSystem.Domains.ViewModels.Base
 {
     public class BaseTagAppService : ITagAppService
     {
-        public BaseTagAppService(ITagRepository tagRepository, Mapper mapper)
+        public BaseTagAppService(ITagRepository tagRepository, IMapper mapper)
         {
             TagRepository = tagRepository;
             Mapper = mapper;
         }
 
         public ITagRepository TagRepository { get; }
-        public Mapper Mapper { get; }
+        public IMapper Mapper { get; }
 
         public async Task DeleteAsync(int id)
         {
@@ -29,6 +29,7 @@ namespace HiringManagementSystem.Domains.ViewModels.Base
             var tag = await TagRepository.FindByIdAsync(id);
             return Mapper.Map<TagAggregate, TagDtoViewModel>(tag);
         }
+
 
         public async Task<List<TagDtoViewModel>> GetAllAsync()
         {
@@ -46,6 +47,11 @@ namespace HiringManagementSystem.Domains.ViewModels.Base
         {
             var tag = Mapper.Map<TagDtoViewModel, TagAggregate>(tagDto);
             await TagRepository.UpdateAsync(tag);
+        }
+        public async Task<List<TagDtoViewModel>> FindByTagNameAsync(string tagName)
+        {
+            var tag = await TagRepository.FindByTagNameAsync(tagName);
+            return Mapper.Map<List<TagDtoViewModel>>(tag);
         }
     }
 }

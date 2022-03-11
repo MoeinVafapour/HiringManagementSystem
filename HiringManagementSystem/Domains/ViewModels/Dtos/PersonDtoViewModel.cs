@@ -11,7 +11,7 @@ namespace HiringManagementSystem.Domains.ViewModels.Dtos
         public string Family { get; set; }
         public long NationalId { get; set; }
         public DateTime BirthDate { get; set; }
-        public ICollection<TagDtoViewModel> Tags { get; set; } 
+        
         #endregion
     }
 }

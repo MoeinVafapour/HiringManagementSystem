@@ -7,7 +7,7 @@
         public string TagName { get; set; }
         public string Description { get; set; }
         public int PersonId { get; set; }
-        public PersonDtoViewModel Person { get; set; } 
+        
         #endregion
     }
 }

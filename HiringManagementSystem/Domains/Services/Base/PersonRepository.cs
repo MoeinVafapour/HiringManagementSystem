@@ -31,6 +31,6 @@ namespace HiringManagementSystem.Domains.Services.Base
             var person =  DbSet.Where(p => p.Tags.Select( t => t.TagName == name).FirstOrDefault()).FirstOrDefault();
             return person;
         }
-
+        
     }
 }
