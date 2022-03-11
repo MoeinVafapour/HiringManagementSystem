@@ -84,9 +84,9 @@ namespace HiringManagementSystem
         {
             if (env.IsDevelopment())
             {
-                app.UseDeveloperExceptionPage();
+                app.UseOpenApi();
                 app.UseSwaggerUi3();
-                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "HiringManagementSystem v1"));
+                app.UseDeveloperExceptionPage();
             }
 
             app.UseHttpsRedirection();
