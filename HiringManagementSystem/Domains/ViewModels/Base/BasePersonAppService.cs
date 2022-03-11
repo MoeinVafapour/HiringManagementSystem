@@ -66,9 +66,5 @@ namespace HiringManagementSystem.Domains.ViewModels.Base
             return Mapper.Map<PersonAggregate,PersonDtoViewModel>(await person);
         }
         
-        //public async Task<PersonDtoViewModel> CreateTagAsync(TagDtoViewModel tag)
-        //{
-            
-        //}
     }
 }

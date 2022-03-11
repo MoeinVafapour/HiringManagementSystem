@@ -26,11 +26,10 @@ namespace HiringManagementSystem.Domains.Services.Base
             return DbSet.FirstOrDefaultAsync(p => p.NationalId == nationalId);
         }
 
-        public async Task<PersonAggregate> FindByTagName(string name)
+        public async Task<PersonAggregate> FindByTagName(string tagName)
         {
-            var person =  DbSet.Where(p => p.Tags.Select( t => t.TagName == name).FirstOrDefault()).FirstOrDefault();
+            var person = DbSet.Single(p => p.Tags.Any(t => t.TagName == tagName));
             return person;
         }
-        
     }
 }
