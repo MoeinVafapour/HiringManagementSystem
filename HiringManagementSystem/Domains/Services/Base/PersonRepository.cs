@@ -21,14 +21,15 @@ namespace HiringManagementSystem.Domains.Services.Base
             return person;
         }
 
-        public Task<PersonAggregate> FindByNationalId(int nationalId)
+        public async Task<PersonAggregate> FindByNationalId(int nationalId)
         {
-            return DbSet.FirstOrDefaultAsync(p => p.NationalId == nationalId);
+            var person = await DbSet.FirstOrDefaultAsync(p => p.NationalId == nationalId);
+            return person;
         }
 
         public async Task<PersonAggregate> FindByTagName(string tagName)
         {
-            var person = DbSet.Single(p => p.Tags.Any(t => t.TagName == tagName));
+            var person = await DbSet.SingleOrDefaultAsync(p => p.Tags.Any(t => t.TagName == tagName));
             return person;
         }
     }
