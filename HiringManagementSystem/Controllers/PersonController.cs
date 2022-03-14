@@ -72,7 +72,7 @@ namespace HiringManagementSystem.Controllers
 
         [Route("wapi/v1/8")]
         [HttpGet]
-        public Task<PersonDtoViewModel> FindByTagName(string tagName)
+        public Task<List<PersonDtoViewModel>> FindByTagName(string tagName)
         {
             var person = PersonAppService.FindByTagNameAsync(tagName);
             return person;

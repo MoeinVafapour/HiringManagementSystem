@@ -1,5 +1,6 @@
 ﻿using HiringManagementSystem.Domains.DomainModels.Aggregates;
 using HiringManagementSystem.Domains.Repositories.Abstracts;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using TanvirArjel.Extensions.Microsoft.DependencyInjection;
 
@@ -10,6 +11,6 @@ namespace HiringManagementSystem.Domains.Services.Abstracts
     {
         Task<PersonAggregate> FindByFamilyAsync(string family);
         Task<PersonAggregate> FindByNationalId(int nationalId);
-        Task<PersonAggregate> FindByTagName(string tagName);
+        Task<List<PersonAggregate>> FindByTagName(string tagName);
     }
 }

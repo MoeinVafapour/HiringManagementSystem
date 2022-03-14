@@ -2,6 +2,7 @@
 using HiringManagementSystem.Domains.Repositories.Base;
 using HiringManagementSystem.Domains.Services.Abstracts;
 using Microsoft.EntityFrameworkCore;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -27,9 +28,9 @@ namespace HiringManagementSystem.Domains.Services.Base
             return person;
         }
 
-        public async Task<PersonAggregate> FindByTagName(string tagName)
+        public async Task<List<PersonAggregate>> FindByTagName(string tagName)
         {
-            var person = await DbSet.SingleOrDefaultAsync(p => p.Tags.Any(t => t.TagName == tagName));
+            var person = await DbSet.Where(p => p.Tags.Any(t => t.TagName == tagName)).ToListAsync();
             return person;
         }
     }
